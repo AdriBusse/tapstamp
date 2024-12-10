@@ -17,10 +17,10 @@ A new Flutter project.
 - **shopId**: `String`
 - **shopName**: `String`
 - **address**: `String`
-- **stampCards**: `List<stampCardId>`
+- **cards**: `List<cardId>`
 
-## StampCard
-- **stampCardId**: `String`
+## card
+- **cardId**: `String`
 - **reward**: `String`
 - **rewardAmount**: `int`
 - **imageType**: `enum` (`coffee`, `soup`, `smoothie`)
