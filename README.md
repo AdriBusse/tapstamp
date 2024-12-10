@@ -2,16 +2,25 @@
 
 A new Flutter project.
 
-## Getting Started
+# Data Models
 
-This project is a starting point for a Flutter application.
+## User
+- **userId**: `String`
+- **stamps**: `List<stampId>`
 
-A few resources to get you started if this is your first Flutter project:
+## Stamp
+- **stampId**: `String`
+- **timestamp**: `String`
+- **shopId**: `String`
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Shop
+- **shopId**: `String`
+- **shopName**: `String`
+- **address**: `String`
+- **stampCards**: `List<stampCardId>`
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# tapstamp
+## StampCard
+- **stampCardId**: `String`
+- **reward**: `String`
+- **rewardAmount**: `int`
+- **imageType**: `enum` (`coffee`, `soup`, `smoothie`)
