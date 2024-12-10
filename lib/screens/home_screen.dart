@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import '../components/shop_card.dart';
-import '../services/shop_service.dart';
+import '../models/shop.dart';
+import '../services/database_service.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final shops = ShopService.getDummyShops();
+    List<Shop> shops = DatabaseService().fetchShops();
 
     return Scaffold(
       appBar: AppBar(

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tapstamp/screens/register_shop.dart';
+import 'package:tapstamp/screens/shop_profile.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -57,9 +59,15 @@ class ProfileScreen extends StatelessWidget {
                   label: const Text('Delete account', style: TextStyle(color: Colors.red)),
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const ShopProfile()),
+                    );
+                  },
                   child: const Text('Switch to Business Account'),
                 ),
+
               ],
             ),
           ],
