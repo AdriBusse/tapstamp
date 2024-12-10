@@ -19,7 +19,7 @@ A new Flutter project.
 - **address**: `String`
 - **cards**: `List<cardId>`
 
-## card
+## Card
 - **cardId**: `String`
 - **reward**: `String`
 - **rewardAmount**: `int`
