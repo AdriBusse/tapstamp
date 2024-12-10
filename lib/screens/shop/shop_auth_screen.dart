@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
-import '../components/custom_text_field.dart';
-import '../components/primary_button.dart';
+import 'register_shop_screen.dart';
+import '../../components/custom_text_field.dart';
+import '../../components/primary_button.dart';
 
-class ShopProfile extends StatefulWidget {
-  const ShopProfile({Key? key}) : super(key: key);
+class ShopAuthScreen extends StatefulWidget {
+  const ShopAuthScreen({Key? key}) : super(key: key);
 
   @override
-  _ShopProfileState createState() => _ShopProfileState();
+  _ShopAuthScreenState createState() => _ShopAuthScreenState();
 }
 
-class _ShopProfileState extends State<ShopProfile> {
+class _ShopAuthScreenState extends State<ShopAuthScreen> {
   // Login controllers
   final TextEditingController loginEmailController = TextEditingController();
   final TextEditingController loginPasswordController = TextEditingController();
@@ -25,7 +26,7 @@ class _ShopProfileState extends State<ShopProfile> {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Business Profile'),
+          title: const Text('Business Authentication'),
           bottom: const TabBar(
             tabs: [
               Tab(text: 'Login'),
@@ -54,8 +55,8 @@ class _ShopProfileState extends State<ShopProfile> {
                   PrimaryButton(
                     label: 'Login',
                     onPressed: () {
-                      // Add login functionality here
-                      print('Login with ${loginEmailController.text}');
+                      // Mock Login Navigation
+                      print('Login successful');
                     },
                   ),
                 ],
@@ -85,10 +86,14 @@ class _ShopProfileState extends State<ShopProfile> {
                   PrimaryButton(
                     label: 'Register',
                     onPressed: () {
-                      // Add registration functionality here
                       if (registerPasswordController.text ==
                           registerReenterPasswordController.text) {
-                        print('Registered with ${registerEmailController.text}');
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const RegisterShopScreen(),
+                          ),
+                        );
                       } else {
                         print('Passwords do not match!');
                       }

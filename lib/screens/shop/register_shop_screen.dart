@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
-import '../components/custom_text_field.dart';
-import '../components/dropdown_field.dart';
-import '../components/counter_field.dart';
-import '../components/save_button.dart';
+import 'shop_profile_screen.dart';
+import '../../components/custom_text_field.dart';
+import '../../components/dropdown_field.dart';
+import '../../components/counter_field.dart';
+import '../../components/save_button.dart';
 
-class RegisterShop extends StatefulWidget {
-  const RegisterShop({Key? key}) : super(key: key);
+class RegisterShopScreen extends StatefulWidget {
+  const RegisterShopScreen({Key? key}) : super(key: key);
 
   @override
-  _RegisterShopState createState() => _RegisterShopState();
+  _RegisterShopScreenState createState() => _RegisterShopScreenState();
 }
 
-class _RegisterShopState extends State<RegisterShop> {
+class _RegisterShopScreenState extends State<RegisterShopScreen> {
   final TextEditingController shopNameController = TextEditingController();
   final TextEditingController addressController = TextEditingController();
   String foodType = 'Banh Mi';
@@ -22,12 +23,6 @@ class _RegisterShopState extends State<RegisterShop> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Register Shop'),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.store),
-          ),
-        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -87,8 +82,17 @@ class _RegisterShopState extends State<RegisterShop> {
             const Spacer(),
             SaveButton(
               onPressed: () {
-                // Add save functionality here
-                print('Shop saved: ${shopNameController.text}');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ShopProfileScreen(
+                      shopName: shopNameController.text,
+                      address: addressController.text,
+                      foodType: foodType,
+                      rewardAmount: amount,
+                    ),
+                  ),
+                );
               },
             ),
           ],

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:tapstamp/screens/register_shop.dart';
-import 'package:tapstamp/screens/shop_profile.dart';
+import 'package:tapstamp/screens/shop/shop_auth_screen.dart';
 
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+class UserProfileScreen extends StatelessWidget {
+  const UserProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +61,7 @@ class ProfileScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const ShopProfile()),
+                      MaterialPageRoute(builder: (context) => const ShopAuthScreen()),
                     );
                   },
                   child: const Text('Switch to Business Account'),

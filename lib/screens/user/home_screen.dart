@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../components/shop_card.dart';
-import '../models/shop.dart';
-import '../services/database_service.dart';
+import '../../components/shop_card.dart';
+import '../../models/shop.dart';
+import '../../services/database_service.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
